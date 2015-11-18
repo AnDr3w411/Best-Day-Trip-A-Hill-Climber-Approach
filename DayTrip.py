@@ -9,8 +9,10 @@ google_places = GooglePlaces(api_key)
 gmaps = googlemaps.Client(key=api_key)
 
 random.seed()
-origin = '866 S pueblo St, Salt Lake City, Utah'
+# TODO: GUI to get user input for Origins
+# origin in SLC
 originGeo = (40.7593192, -111.8973234)
+# origin in San Diego California
 # originGeo = (37.7548009, -122.460783)
 print originGeo
 radius = 20000
@@ -18,6 +20,8 @@ trip_length = 5
 trip = []
 allPlaces = []
 timeDict = {}
+# Hardcoded Keywords
+# TODO: GUI to get user input for keywords
 keywords = [['Museum', types.TYPE_MUSEUM], ['Aquarium', types.TYPE_AQUARIUM],
             ['Zoo', types.TYPE_ZOO], ['Historic Site', types.TYPE_POINT_OF_INTEREST],
             ['Bowling Alley', types.TYPE_BOWLING_ALLEY]]
