@@ -1,42 +1,25 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Day-trip-ai-project by AnDr3w411</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Day-trip-ai-project</h1>
+      <h2 class="project-tagline">Hill climber algorithm to find the best possible day trip</h2>
+      <a href="https://github.com/AnDr3w411/Day-trip-AI-project" class="btn">View on GitHub</a>
+      <a href="https://github.com/AnDr3w411/Day-trip-AI-project/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/AnDr3w411/Day-trip-AI-project/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
-
-  <title>Day-trip-ai-project</title>
-  <meta name="description" content="Hill climber algorithm to find the best possible day trip">
-
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Day-trip-ai-project</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Hill climber algorithm to find the best possible day trip</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/AnDr3w411/Day-trip-AI-project/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/AnDr3w411/Day-trip-AI-project/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/AnDr3w411/Day-trip-AI-project" class="code">View Day-trip-ai-project on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h2>
+    <section class="main-content">
+      <h2>
 <a id="generate-the-best-possible-day-trip" class="anchor" href="#generate-the-best-possible-day-trip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate the best possible day trip!</h2>
 
 <p>This project is meant to generate an optimized day trip using the googleAPI to get places and a hill climbing algorithm to find the trip that takes you to the best places with the shortest travel time. This is a type of traveling salesman problem with a hill climber algorithm used to solve it. With the googleAPI I was able to get all of the places within a specified radius of the types that I am interested in, i.e. museums. I am able to query googleAPI to find the travel time between 2 places and each place has a rating attribute. With a rating and a time the algorithm just goes through a pregenerated trip making changes where ever it can to improve the "happiness" level of the trip.</p>
@@ -49,27 +32,25 @@ Specifically Google Maps Distance Matrix API and Google Places API Web Service a
 <h3>
 <a id="original-trip" class="anchor" href="#original-trip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Original Trip</h3>
 
-<p><img src="http://oi68.tinypic.com/2qd2z4m.jpg" alt="original trip"></p>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/AnDr3w411" class="avatar"><img src="https://avatars2.githubusercontent.com/u/15900284?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/AnDr3w411">AnDr3w411</a> maintains <a href="https://github.com/AnDr3w411/Day-trip-AI-project">Day-trip-ai-project</a></p>
+<p><img src="http://oi68.tinypic.com/2qd2z4m.jpg" alt="original trip">
+Average Rating:  4.26
+Total Time:  3796 seconds</p>
 
+<h2>
+<a id="final-trip" class="anchor" href="#final-trip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Trip</h2>
 
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/AnDr3w411/Day-trip-AI-project/tarball/master" class="tar">tar</a><a href="https://github.com/AnDr3w411/Day-trip-AI-project/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
+<p><img src="http://oi65.tinypic.com/4h5jsy.jpg" alt="final trip">
+Average Rating:  4.52
+Total Time:  3476 seconds</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/AnDr3w411/Day-trip-AI-project">Day-trip-ai-project</a> is maintained by <a href="https://github.com/AnDr3w411">AnDr3w411</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
 
   
-</body>
+  </body>
 </html>
