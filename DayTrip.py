@@ -4,15 +4,12 @@ import random
 from googleplaces import GooglePlaces, types
 
 api_key = input("Enter the API Key")
-# api_key = api_key2
 google_places = GooglePlaces(api_key)
 gmaps = googlemaps.Client(key=api_key)
 
 random.seed()
-# TODO: GUI to get user input for Origins
-# origin in SLC
+origin = '866 S pueblo St, Salt Lake City, Utah'
 originGeo = (40.7593192, -111.8973234)
-# origin in San Diego California
 # originGeo = (37.7548009, -122.460783)
 print originGeo
 radius = 20000
@@ -20,8 +17,6 @@ trip_length = 5
 trip = []
 allPlaces = []
 timeDict = {}
-# Hardcoded Keywords
-# TODO: GUI to get user input for keywords
 keywords = [['Museum', types.TYPE_MUSEUM], ['Aquarium', types.TYPE_AQUARIUM],
             ['Zoo', types.TYPE_ZOO], ['Historic Site', types.TYPE_POINT_OF_INTEREST],
             ['Bowling Alley', types.TYPE_BOWLING_ALLEY]]
@@ -63,7 +58,7 @@ for place in trip:
     # Returned places from a query are place summaries.
     print place.name
     # print place.geo_location
-    # print gmaps.reverse_geocode(place.geo_location)[0]['formatted_address']
+    print gmaps.reverse_geocode(place.geo_location)[0]['formatted_address']
     print place.rating
     if isinstance(place.rating, float) or isinstance(place.rating, int):
         totalRating += place.rating
@@ -96,11 +91,13 @@ else:
 print "Average Rating: ", totalRating/len(trip)
 print "Total Time: ", totalTime
 running = True
-best_trip = trip
+best_trip = copy.deepcopy(trip)
 best_time = totalTime
 best_rating = totalRating
+totalRating = 0
+totalRating = 0
 noBetterCount = 0
-while noBetterCount < 20:
+while noBetterCount < 1000:
 
     done = False
     distance = 0
@@ -175,27 +172,30 @@ while noBetterCount < 20:
         # print totalTime
         # print totalRating
         if done:
-            print "Finished after ", count, " loops"
+            # print "Finished after ", count, " loops"
             print "Time: ", totalTime
             print "Average Rating: ", totalRating / len(trip)
-            print
         if count >= 20:
             # print "ran", count, " times"
             done = True
     if best_rating <= totalRating and best_time > totalTime:
-        best_trip = trip
+        best_trip = copy.deepcopy(trip)
         best_rating = totalRating
         best_time = totalTime
         noBetterCount = 0
-        print "New Best"
+        print "New Best!!!"
+        print
     elif best_rating < totalRating and best_time >= totalTime:
-        best_trip = trip
+        best_trip = copy.deepcopy(trip)
         best_rating = totalRating
         best_time = totalTime
         noBetterCount = 0
-        print "New Best"
+        print "New Best!!!"
+        print
     else:
         noBetterCount += 1
+        print "No better count: ", noBetterCount
+        print
 
     for place in trip:
         allPlaces.append(place)
@@ -206,11 +206,14 @@ while noBetterCount < 20:
         trip.append(allPlaces[j])
         del allPlaces[j]
 
+best_rating = 0;
 print "The final trip"
 for place in best_trip:
     print place.name
+    print gmaps.reverse_geocode(place.geo_location)[0]['formatted_address']
     print place.rating
     print
+    best_rating += place.rating
 print "Average Rating: ", best_rating/len(best_trip)
 print "Total Time: ", best_time
 print "timeDict Length: ", len(timeDict)
