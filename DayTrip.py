@@ -2,6 +2,7 @@ __author__ = 'AnDr3w'
 import googlemaps
 import random
 from googleplaces import GooglePlaces, types
+import copy
 
 api_key = input("Enter the API Key")
 google_places = GooglePlaces(api_key)
