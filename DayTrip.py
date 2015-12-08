@@ -206,7 +206,7 @@ while noBetterCount < 1000:
         trip.append(allPlaces[j])
         del allPlaces[j]
 
-best_rating = 0;
+best_rating = 0
 print "The final trip"
 for place in best_trip:
     print place.name
